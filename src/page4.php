@@ -9,7 +9,7 @@
 
 <main>
 
-    Nothing here yet... ;)
+    Tukaj ni še ničesar... ;)
 
 </main>
 

@@ -15,9 +15,10 @@
     </p>
     <h2>Binarno drevo</h2>
     <p>
-        Binarno drevo je drevo, kjer ima vsak starš ali dva otroka ali pa nobenega.
+        Binarno drevo je drevo, kjer ima vsak starš dva otroka ali pa nobenega.
         Tista vozlišča, ki nimajo otrok, imenujemo listi in so na dnu drevesa na isti globini.
     </p>
+    <img src="../static/binarno_drevo.png" alt="binarno drevo" width="50%">
 
 </main>
 

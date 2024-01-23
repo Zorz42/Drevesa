@@ -49,6 +49,7 @@ footer {
 img {
     width: 100%;
     height: auto;
+    padding: 60px;
 }
 
 .definition {
@@ -57,9 +58,20 @@ img {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #eee;
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .06);
 }
 
 #razmislek {
     font-family: "baroqueFont", serif;
     font-size: 10em;
+}
+
+.prettyprint {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .06);
 }

@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    /*font-family: Arial, sans-serif;*/
+    font-family: "Space Mono", monospace;
+    background-color: lightgray;
+}
+
+@font-face {
+    font-family: "baroqueFont";
+    src: url("NeueZierSchrift.ttf");
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px;
+    box-shadow: 0 0 12px 12px rgba(0, 0, 0, .2);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, .1);
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.definition {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #eee;
+}
+
+#razmislek {
+    font-family: "baroqueFont", serif;
+    font-size: 10em;
+}

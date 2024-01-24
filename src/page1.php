@@ -70,7 +70,7 @@ struct SegTree {
         tree_size = 1;
         while(tree_size < size)
             tree_size *= 2;
-        tree = new ll(2 * tree_size);
+        tree = new ll[2 * tree_size]();
     }
 
     ll get(int node, int rl, int rr, int l, int r);

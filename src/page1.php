@@ -11,35 +11,35 @@
 
     <p>
         Denimo, da imamo naslednji problem:
-        <br>
     </p>
     <div class="definition">
-    <p>
-        Imamo seznam števil velikosti <b>n</b>.
-        Podpirati moramo naslednji dve operaciji:
-    </p>
+        <p>
+            Imamo seznam števil velikosti <b>n</b>.
+            Podpirati moramo naslednji dve operaciji:
+        </p>
 
-    <ul>
-    <li>
-        Vrni vsoto vseh števil iz seznama s položaji na intervalu <b>[i, j)</b>.
-    </li>
-    <li>
-        Nastavi število na <b>i</b>-tem polozžaju na <b>x</b>.
-    </li>
-    </ul>
+        <ul>
+            <li>
+                Vrni vsoto vseh števil iz seznama s položaji na intervalu <b>[i, j)</b>.
+            </li>
+            <li>
+                Nastavi število na <b>i</b>-tem polozžaju na <b>x</b>.
+            </li>
+        </ul>
     </div>
 
     <p>
-        Čez seznam bi lahko zgradili binarno drevo (segmentno drevo), kjer so listi števila iz seznama in vsak starš ima vrednost vsote svojih otrok.
-        <br>
+        Čez seznam bi lahko zgradili binarno drevo (segmentno drevo), kjer so listi števila iz seznama in vsak starš ima
+        vrednost vsote svojih otrok.
     </p>
-        <img src="static/segmentno_drevo.png" alt="binarno drevo">
+    <img src="static/segmentno_drevo.png" alt="binarno drevo">
     <p>
-        <br>
-        Za intervalne poizvedbe bi lahko uporabili segmente in bi tako zmanjšali časovno zahtevnost iz <b>O(n)</b> na O(log(n)) - primer narisan z rdečo barvo.
-        <br>
-        <br>
-        Za spreminjanje vrednosti na <b>i</b>-tem mestu pa bi morali posodobiti vse segmente, ki vsebujejo to vrednost, kar bi bilo <b>O(log(n))</b> posodobitev - primer z vijolično barvo.
+        Za intervalne poizvedbe bi lahko uporabili segmente in bi tako zmanjšali časovno zahtevnost iz <b>O(n)</b> na
+        O(log(n)) - primer narisan z rdečo barvo.
+    </p>
+    <p>
+        Za spreminjanje vrednosti na <b>i</b>-tem mestu pa bi morali posodobiti vse segmente, ki vsebujejo to vrednost,
+        kar bi bilo <b>O(log(n))</b> posodobitev - primer z vijolično barvo.
     </p>
 
     <h1>Implementacija</h1>
@@ -54,10 +54,12 @@
         Opazimo naslednjo lepo lastnost:
     </p>
     <div class="definition">
-        Za vozliše s številko <b>i</b> imata njegova otroka številki <b>2i</b> in <b>2i + 1</b> in starš številko <b>i / 2</b> (zaokroženo navzdol).
+        Za vozliše s številko <b>i</b> imata njegova otroka številki <b>2i</b> in <b>2i + 1</b> in starš številko <b>i /
+            2</b> (zaokroženo navzdol).
     </div>
     <p>
-        Kar pomeni, da lahko vsa vozlišča drevesa shranimo v tabelo velikosti <b>2n</b> in prvi element na položaju <b>0</b> je zanemarjen.
+        Kar pomeni, da lahko vsa vozlišča drevesa shranimo v tabelo velikosti <b>2n</b> in prvi element na položaju
+        <b>0</b> je zanemarjen.
         To tudi pomeni, da je list na položaju <b>n + i</b>, kjer je <b>i</b> položaj v tabeli.
     </p>
     <pre class="prettyprint">
@@ -93,7 +95,8 @@ struct SegTree {
         <b>l</b> in <b>r</b> predstavljata interval, ki ga iščemo.
     </p>
     <p>
-        Funkcija <b>set</b> nastavi vrednost na položaju <b>i</b> na <b>val</b>. V tem primeru je to vozlišče <b>tree_size + i</b>.
+        Funkcija <b>set</b> nastavi vrednost na položaju <b>i</b> na <b>val</b>. V tem primeru je to vozlišče <b>tree_size
+            + i</b>.
     </p>
 
     <pre class="prettyprint">
@@ -112,7 +115,8 @@ void SegTree::set(int i, int val) {
         Tukaj najprej <b>node</b> nastavimo na list, ki predstavlja spremenjeno vrednost in ga nastavimo na <b>val</b>.
         <b>node /= 2</b> ga premakne na starša in se tako pomikamo gor po drevesu.
         Nato v zanki posodabljamo vrednosti vseh staršev, dokler ne pridemo do korena.
-        <b>tree[node] = tree[2 * node] + tree[2 * node + 1];</b> zgolj poskrbi, da je vrednost vozlišča enaka vsoti vrednosti njegovih otrok.
+        <b>tree[node] = tree[2 * node] + tree[2 * node + 1];</b> zgolj poskrbi, da je vrednost vozlišča enaka vsoti
+        vrednosti njegovih otrok.
     </p>
     <p>
         Brez posebnih razmislekov lahko hitro vidimo, da je časovna zahtevnost te funkcije <b>O(log(n))</b>.
@@ -131,7 +135,8 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
     return get(2 * node, rl, mid, l, r) + get(2 * node + 1, mid, rr, l, r);
 }</pre>
     <p>
-        Prvi if stavek preveri, če je interval, ki ga iščemo, popolnoma zunaj intervala, ki ga pokriva trenutno vozlišče.
+        Prvi if stavek preveri, če je interval, ki ga iščemo, popolnoma zunaj intervala, ki ga pokriva trenutno
+        vozlišče.
         V tem primeru vrnemo 0, saj ta interval ne vsebuje ničesar od tistega, kar iščemo.
     </p>
     <p>
@@ -139,7 +144,8 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
         V tem primeru vrnemo vrednost tega vozlišča, saj vsebuje vse, kar iščemo.
     </p>
     <p>
-        Če ni noben od teh dveh primerov, potem interval, ki ga iščemo, delno vsebuje interval, ki ga pokriva trenutno vozlišče,
+        Če ni noben od teh dveh primerov, potem interval, ki ga iščemo, delno vsebuje interval, ki ga pokriva trenutno
+        vozlišče,
         zato rekurzivno pokličemo funkcijo na obeh otrocih in vrnemo njuno vsoto.
         Opazimo, da se interval, ki ga iščemo, vedno zmanjša, zato se bo rekurzija slej ko prej končala.
     </p>
@@ -154,19 +160,20 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
     <p>
         Segmentno drevo je precej močno orodje, a izkaže se, da je še močnejše, kot se zdi na prvi pogled.
         Poleg razšritev in optimizacij, ki so opisane v naslednjih straneh, je tudi bolj splošno.
-        Namesto, da bi seštevali števila, lahko z neko <b>asociativno</b> operacijo združujemo neke elemente na intervalih.
+        Namesto, da bi seštevali števila, lahko z neko <b>asociativno</b> operacijo združujemo neke elemente na
+        intervalih.
         Primeri takih operacij:
     </p>
-        <ul>
-            <li>seštevanje</li>
-            <li>množenje</li>
-            <li>minimum</li>
-            <li>maksimum</li>
-            <li>gcd</li>
-            <li>lcm</li>
-            <li>predpona z največjim seštevkom</li>
-            <li>in tako dalje...</li>
-        </ul>
+    <ul>
+        <li>seštevanje</li>
+        <li>množenje</li>
+        <li>minimum</li>
+        <li>maksimum</li>
+        <li>gcd</li>
+        <li>lcm</li>
+        <li>predpona z največjim seštevkom</li>
+        <li>in tako dalje...</li>
+    </ul>
     <p>
         Včasih je težko najti uporabo segmentnega drevesa pri problemu, zato se pogosto pojavlja na tekmovanjih.
 

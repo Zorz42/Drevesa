@@ -9,7 +9,9 @@
 
 <main>
 
-    Denimo, da imamo nov problem, sicer podoben prejšnjemu:
+    <p>
+        Denimo, da imamo nov problem, sicer podoben prejšnjemu:
+    </p>
     <div class="definition">
         <p>
             Imamo seznam števil velikosti n.
@@ -31,12 +33,14 @@
         lahko v najslabšem primeru posodobili celo drevo, ko spreminjamo vrednosti.
         Rešitev je, da za vsako vozlišče shranimo še vrednost, ki jo moramo prišteti na temu pripadajočem intervalu.
         Tej vrednosti pravimo <b>lazy</b>, saj na len način odlašamo s posodabljanjem.
-        Velikokrat je odlašanje v algorithmih brez pomena, saj moramo neko stvar narediti slej ko prej, vendar pri tej nalogi
+        Velikokrat je odlašanje v algorithmih brez pomena, saj moramo neko stvar narediti slej ko prej, vendar pri tej
+        nalogi
         se pa časovna zahtevnost celo spremeni.
     </p>
 
     <p>
-        Časovna zahtevnost je sedaj <b>O(log(n))</b> za vsako poizvedbo in posodobitev. To drevo je sposobno vsega, kar je sposobno
+        Časovna zahtevnost je sedaj <b>O(log(n))</b> za vsako poizvedbo in posodobitev. To drevo je sposobno vsega, kar
+        je sposobno
         tudi navadno segmentno drevo brez nekih omembe vrednih časovnih izgub.
     </p>
 
@@ -73,7 +77,8 @@ struct SegTree {
 };</pre>
     <p>
         Koda je precej podobna, le da imamo sedaj še <b>lazy</b> tabelo, ki jo uporabljamo pri posodabljanju.
-        Dodana je tudi funkcija <b>update</b>, ki posodobi vrednost <b>lazy</b> na vozlišču in ga potisne navzdol na otroka.
+        Dodana je tudi funkcija <b>update</b>, ki posodobi vrednost <b>lazy</b> na vozlišču in ga potisne navzdol na
+        otroka.
         Tudi funkcija set je spremenjena, saj zdaj posodabljamo intervale in ne več posameznih elementov.
     </p>
 
@@ -91,8 +96,10 @@ void SegTree::update(int node, int len) {
     <p>
         Ta funkcija posodobi vrednost <b>lazy</b> na vozlišču in ga potisne navzdol na otroka.
         S tem poskrbi, da je vrednost <b>tree</b> na vozlišču pravilna.
-        Najprej preverimo, če je vrednost <b>lazy</b> na vozlišču različna od 0, saj če je enaka 0, potem ni potrebe po posodabljanju.
-        Drugi if stavek preveri, če je vozlišče list, saj če je, potem nima otrok in ne moremo posodobiti njihovih vrednosti.
+        Najprej preverimo, če je vrednost <b>lazy</b> na vozlišču različna od 0, saj če je enaka 0, potem ni potrebe po
+        posodabljanju.
+        Drugi if stavek preveri, če je vozlišče list, saj če je, potem nima otrok in ne moremo posodobiti njihovih
+        vrednosti.
         Na koncu posodobimo vrednost vozlišča in jo nastavimo <b>lazy</b> na 0.
     </p>
     <pre class="prettyprint">
@@ -108,7 +115,8 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
     return get(2 * node, rl, mid, l, r) + get(2 * node + 1, mid, rr, l, r);
 }</pre>
     <p>
-        Ta funkcija je precej podobna tisti iz navadnega segmentnega drevesa, le da moramo, preden nadaljujemo z iskanjem,
+        Ta funkcija je precej podobna tisti iz navadnega segmentnega drevesa, le da moramo, preden nadaljujemo z
+        iskanjem,
         poklical funkcijo <b>update</b>, ki poskrbi, da je vrednost <b>tree</b> na vozlišču pravilna.
 
     </p>

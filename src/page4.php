@@ -9,7 +9,9 @@
 
 <main>
 
-    Tukaj ni še ničesar... ;)
+    <p>
+        Pride kmalu :)
+    </p>
 
 </main>
 

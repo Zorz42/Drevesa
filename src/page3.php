@@ -9,7 +9,9 @@
 
 <main>
 
-    Denimo, da imamo nov problem, ki je spet samo razširitev prejšnjega:
+    <p>
+        Denimo, da imamo nov problem, ki je spet samo razširitev prejšnjega:
+    </p>
     <div class="definition">
         <p>
             Imamo seznam števil velikosti n.
@@ -31,10 +33,13 @@
     </div>
 
     <p>
-        Ugotovimo, da če bi zdradili drevo na enak način kot prej, bi bilo drevo preveliko in ne bi imeli dovolj spomina ali časa.
+        Ugotovimo, da če bi zdradili drevo na enak način kot prej, bi bilo drevo preveliko in ne bi imeli dovolj spomina
+        ali časa.
         Vendar dobimo idejo: Kaj pa če namesto celega drevesa shranimo samo tista vozlišča, ki so pomembna?
-        Bolj natančno bi shranili samo tista vozlišča, ki so bila kadarkoli spremenjena. Vsako vozlišče bi imelo dva kazalca na otroka,
-        ki bi bila <b>-1</b>, če otroka ne bi bilo. V tem primeru je cel interval, ki ga to vozlišče predstavlja, enak <b>0</b>.
+        Bolj natančno bi shranili samo tista vozlišča, ki so bila kadarkoli spremenjena. Vsako vozlišče bi imelo dva
+        kazalca na otroka,
+        ki bi bila <b>-1</b>, če otroka ne bi bilo. V tem primeru je cel interval, ki ga to vozlišče predstavlja, enak
+        <b>0</b>.
     </p>
 
     <img src="static/segmentno_drevo_3.png" alt="binarno drevo">
@@ -136,7 +141,8 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
 
     <p>
         Ta funkcija je tudi skoraj enaka, le da moramo paziti, da ne bomo šli v vozlišče, ki ne obstaja.
-        Tudi treba je biti pozoren na to, da otroci niso več <b>2 * node</b> in <b>2 * node + 1</b>, ampak so shranjeni v tabeli.
+        Tudi treba je biti pozoren na to, da otroci niso več <b>2 * node</b> in <b>2 * node + 1</b>, ampak so shranjeni
+        v tabeli.
     </p>
 
 

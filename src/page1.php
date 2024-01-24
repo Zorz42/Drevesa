@@ -150,6 +150,28 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
         Bodisi je to formalen dokaz ali pa zgolj intuitivno razumevanje.
     </p>
 
+    <h2>Dodatek</h2>
+    <p>
+        Segmentno drevo je precej močno orodje, a izkaže se, da je še močnejše, kot se zdi na prvi pogled.
+        Poleg razšritev in optimizacij, ki so opisane v naslednjih straneh, je tudi bolj splošno.
+        Namesto, da bi seštevali števila, lahko z neko <b>asociativno</b> operacijo združujemo neke elemente na intervalih.
+        Primeri takih operacij:
+    </p>
+        <ul>
+            <li>seštevanje</li>
+            <li>množenje</li>
+            <li>minimum</li>
+            <li>maksimum</li>
+            <li>gcd</li>
+            <li>lcm</li>
+            <li>predpona z največjim seštevkom</li>
+            <li>in tako dalje...</li>
+        </ul>
+    <p>
+        Včasih je težko najti uporabo segmentnega drevesa pri problemu, zato se pogosto pojavlja na tekmovanjih.
+
+    </p>
+
 </main>
 
 </body>

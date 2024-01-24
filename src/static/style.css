@@ -14,15 +14,18 @@ nav {
     display: flex;
     justify-content: center;
     background-color: #444;
-    padding: 10px;
+    padding: 5px;
     box-shadow: 0 0 12px 12px rgba(0, 0, 0, .2);
+    align-items: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     padding: 10px;
-    margin: 0 10px;
+    margin: 0 20px;
+    text-align: center;
+    line-height: 28px;
 }
 
 main {
@@ -58,7 +61,7 @@ img {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #eee;
-    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .06);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .07);
 }
 
 #razmislek {
@@ -73,5 +76,19 @@ img {
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #eee;
-    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .06);
+    box-shadow: 0 0 25px 25px rgba(0, 0, 0, .07);
+}
+
+.special-button {
+    background-color: dimgray;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
 }

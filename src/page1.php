@@ -15,16 +15,16 @@
     </p>
     <div class="definition">
     <p>
-        Imamo seznam števil velikosti n.
+        Imamo seznam števil velikosti <b>n</b>.
         Podpirati moramo naslednji dve operaciji:
     </p>
 
     <ul>
     <li>
-        vrni vsoto vseh števil iz seznama s položaji na intervalu [i, j)
+        Vrni vsoto vseh števil iz seznama s položaji na intervalu <b>[i, j)</b>.
     </li>
     <li>
-        nastavi število na i-tem polozžaju na x
+        Nastavi število na <b>i</b>-tem polozžaju na <b>x</b>.
     </li>
     </ul>
     </div>
@@ -36,10 +36,10 @@
         <img src="static/segmentno_drevo.png" alt="binarno drevo">
     <p>
         <br>
-        Za intervalne poizvedbe bi lahko uporabili segmente in bi tako zmanjšali časovno zahtevnost iz O(n) na O(log(n)) - primer narisan z rdečo barvo.
+        Za intervalne poizvedbe bi lahko uporabili segmente in bi tako zmanjšali časovno zahtevnost iz <b>O(n)</b> na O(log(n)) - primer narisan z rdečo barvo.
         <br>
         <br>
-        Za spreminjanje vrednosti na i-tem mestu pa bi morali posodobiti vse segmente, ki vsebujejo to vrednost, kar bi bilo O(log(n)) posodobitev - primer z vijolično barvo.
+        Za spreminjanje vrednosti na <b>i</b>-tem mestu pa bi morali posodobiti vse segmente, ki vsebujejo to vrednost, kar bi bilo <b>O(log(n))</b> posodobitev - primer z vijolično barvo.
     </p>
 
     <h1>Implementacija</h1>

@@ -42,7 +42,7 @@
         <b>0</b>.
     </p>
 
-    <img src="static/segmentno_drevo_3.png" alt="binarno drevo">
+    <a href="https://stats.ioinformatics.org/people/3219"><img src="static/segmentno_drevo_3.png" alt="binarno drevo" id="img_link"></a>
     <p>
         Tako bi izgledalo redko drevo, če bi samo posodobili označena intervala.
         Celo drevo je narisano s sivo barvo, redko drevo pa s črno.

@@ -70,6 +70,16 @@ img {
     font-size: 7em;
 }
 
+#razmislek_a {
+    /* make it look not like a link */
+    text-decoration: none;
+    color: black;
+}
+
+#img_link {
+    padding: 0;
+}
+
 .prettyprint {
     width: 100%;
     margin: 10px 0;

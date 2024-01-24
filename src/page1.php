@@ -122,7 +122,7 @@ void SegTree::set(int i, int val) {
         Brez posebnih razmislekov lahko hitro vidimo, da je časovna zahtevnost te funkcije <b>O(log(n))</b>.
     </p>
 
-    <h1 id="razmislek">Rekurzivni Razmislek</h1>
+    <a id="razmislek_a" href="https://stats.ioinformatics.org/people/1077"><h1 id="razmislek">Rekurzivni Razmislek</h1></a>
     <pre class="prettyprint">
 ll SegTree::get(int node, int rl, int rr, int l, int r) {
     if(r <= rl || rr <= l)
@@ -176,7 +176,10 @@ ll SegTree::get(int node, int rl, int rr, int l, int r) {
     </ul>
     <p>
         Včasih je težko najti uporabo segmentnega drevesa pri problemu, zato se pogosto pojavlja na tekmovanjih.
+    </p>
 
+    <p>
+        Če nisi nič razumel, potem si poglej <a href="#">tole</a> stran.
     </p>
 
 </main>

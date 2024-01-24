@@ -119,6 +119,36 @@ void SegTree::set(int i, int val) {
     </p>
 
     <h1 id="razmislek">Rekurzivni Razmislek</h1>
+    <pre class="prettyprint">
+ll SegTree::get(int node, int rl, int rr, int l, int r) {
+    if(r <= rl || rr <= l)
+        return 0;
+
+    if(l <= rl && rr <= r)
+        return tree[node];
+
+    int mid = (rl + rr) / 2;
+    return get(2 * node, rl, mid, l, r) + get(2 * node + 1, mid, rr, l, r);
+}</pre>
+    <p>
+        Prvi if stavek preveri, če je interval, ki ga iščemo, popolnoma zunaj intervala, ki ga pokriva trenutno vozlišče.
+        V tem primeru vrnemo 0, saj ta interval ne vsebuje ničesar od tistega, kar iščemo.
+    </p>
+    <p>
+        Drugi if stavek preveri, če je interval, ki ga iščemo, popolnoma v intervalu, ki ga pokriva trenutno vozlišče.
+        V tem primeru vrnemo vrednost tega vozlišča, saj vsebuje vse, kar iščemo.
+    </p>
+    <p>
+        Če ni noben od teh dveh primerov, potem interval, ki ga iščemo, delno vsebuje interval, ki ga pokriva trenutno vozlišče,
+        zato rekurzivno pokličemo funkcijo na obeh otrocih in vrnemo njuno vsoto.
+        Opazimo, da se interval, ki ga iščemo, vedno zmanjša, zato se bo rekurzija slej ko prej končala.
+    </p>
+    <p>
+        Po ne tako trivialnem razmisleku lahko vidimo, da je časovna zahtevnost te funkcije <b>O(log(n))</b>.
+        Zakaj to drži?
+        V to se ne bomo spuščali in je zato prepuščeno bralcu le kot razmislek.
+        Bodisi je to formalen dokaz ali pa zgolj intuitivno razumevanje.
+    </p>
 
 </main>
 

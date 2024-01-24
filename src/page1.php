@@ -96,6 +96,28 @@ struct SegTree {
         Funkcija <b>set</b> nastavi vrednost na položaju <b>i</b> na <b>val</b>. V tem primeru je to vozlišče <b>tree_size + i</b>.
     </p>
 
+    <pre class="prettyprint">
+void SegTree::set(int i, int val) {
+    int node = tree_size + i;
+    tree[node] = val;
+    node /= 2;
+
+    while(node > 0) {
+        tree[node] = tree[2 * node] + tree[2 * node + 1];
+        node /= 2;
+    }
+}</pre>
+
+    <p>
+        Tukaj najprej <b>node</b> nastavimo na list, ki predstavlja spremenjeno vrednost in ga nastavimo na <b>val</b>.
+        <b>node /= 2</b> ga premakne na starša in se tako pomikamo gor po drevesu.
+        Nato v zanki posodabljamo vrednosti vseh staršev, dokler ne pridemo do korena.
+        <b>tree[node] = tree[2 * node] + tree[2 * node + 1];</b> zgolj poskrbi, da je vrednost vozlišča enaka vsoti vrednosti njegovih otrok.
+    </p>
+    <p>
+        Brez posebnih razmislekov lahko hitro vidimo, da je časovna zahtevnost te funkcije <b>O(log(n))</b>.
+    </p>
+
     <h1 id="razmislek">Rekurzivni Razmislek</h1>
 
 </main>

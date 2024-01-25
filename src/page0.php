@@ -22,6 +22,10 @@
     </div>
     <img src="static/binarno_drevo.png" alt="binarno drevo">
 
+    <p>
+        Izvorna koda:
+        <a href="https://github.com/Zorz42/drevesa">https://github.com/Zorz42/drevesa</a>
+    </p>
 
 </main>
 
